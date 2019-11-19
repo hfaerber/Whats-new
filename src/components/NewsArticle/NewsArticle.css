@@ -1,0 +1,32 @@
+.newsArticle {
+  border: 2px solid orange;
+  color: whitesmoke;
+  width: 40%;
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  width: 50px;
+}
+
+h3,
+p {
+  margin: 10px;
+}
+
+.linkBox {
+  padding: 10px;
+  background-color: rebeccapurple;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin: 5px;
+}
