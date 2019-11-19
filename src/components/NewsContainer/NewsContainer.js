@@ -3,7 +3,7 @@ import './NewsContainer.css'
 import NewsArticle from './../NewsArticle/NewsArticle.js'
 
 function NewsContainer(props) {
-  const newsArticles = props.localData.map(newsBit => {
+  const newsArticles = props.newsType.map(newsBit => {
     return <NewsArticle
       key = {newsBit.id}
       articleImg = {newsBit.img}

@@ -12,7 +12,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      selectedNews: '',
+      selectedNews: 'local',
       local,
       entertainment,
       health,
@@ -21,17 +21,18 @@ class App extends Component {
     }
   }
 
-  selectNews = (newsType) => {
+  setSelectedNews = (newsType) => {
     this.setState({ selectedNews: newsType });
-    console.log(this.state.local)
   }
 
   render () {
     return (
       <div className="app">
-        <Menu />
+        <Menu
+          setSelectedNews = {this.setSelectedNews}
+        />
         <NewsContainer
-          localData = {this.state.local}
+          newsType = {this.state[this.state.selectedNews]}
         />
       </div>
     );
