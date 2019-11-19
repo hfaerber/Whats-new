@@ -1,0 +1,7 @@
+.newsContainer {
+  border: 2px solid green;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
