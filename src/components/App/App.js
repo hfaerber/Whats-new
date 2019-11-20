@@ -7,6 +7,7 @@ import technology from '../../data/technology';
 import './App.css';
 import NewsContainer from './../NewsContainer/NewsContainer.js'
 import Menu from './../Menu/Menu.js'
+import SearchForm from './../SearchForm/SearchForm.js'
 
 class App extends Component {
   constructor() {
@@ -25,9 +26,20 @@ class App extends Component {
     this.setState({ selectedNews: newsType });
   }
 
+  filterBySearch = (event, searchQuery) => {
+    event.preventDefault();
+    const searchedArticles =
+      this.state[this.state.selectedNews].filter(article =>
+        article.headline.includes(searchQuery))
+    this.setState({ [this.state.selectedNews]: searchedArticles })
+  }
+
   render () {
     return (
       <div className="app">
+        <SearchForm
+          filterBySearch = {this.filterBySearch}
+        />
         <Menu
           setSelectedNews = {this.setSelectedNews}
         />

@@ -4,7 +4,6 @@ import './Menu.css'
 const Menu = ({setSelectedNews}) => {
   return(
     <div className='menu'>
-      <h1>What's New</h1>
       <nav onClick={(event) =>
         setSelectedNews(event.target.name)}>
         <button name='local' className='navButton'>
