@@ -5,7 +5,11 @@
 }
 
 .app {
-  display: flex;
+  /* display: flex; */
+  /* display: grid;
+  grid-template-areas:
+    'header header '
+    'menu container'; */
   background: #141527;
   height: 100vh;
   text-align: center;
