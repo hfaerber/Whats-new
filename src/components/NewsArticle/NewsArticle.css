@@ -1,7 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .newsArticle {
   border: 2px solid orange;
-  color: whitesmoke;
-  width: 50%;
+  color: black;
+  width: 48%;
+  margin: 0 2% 2% 0;
+  background-color: whitesmoke;
 }
 
 img {
@@ -19,6 +27,9 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
+  border: 0;
+  font-size: 1.2em;
 }
 
 a {

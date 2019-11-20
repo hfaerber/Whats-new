@@ -1,10 +1,10 @@
 .newsContainer {
-  /* grid-area: container; */
+  grid-area: container;
   border: 2px solid green;
   color: whitesmoke;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 80%;
+  /* width: 80%; */
   overflow: scroll;
 }

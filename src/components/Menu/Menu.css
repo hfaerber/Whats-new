@@ -1,7 +1,7 @@
 .menu {
-  /* grid-area: menu; */
+  grid-area: menu;
   color: whitesmoke;
-  width: 20%;
+  /* width: 20%; */
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -10,9 +10,10 @@
 .navButton {
   padding: 10px;
   width: 100%;
-  font-size: 1em;
+  font-size: 1.2em;
   background-color: #141527;
   color: whitesmoke;
   border: none;
   margin-top: 5px;
+  cursor: pointer;
 }

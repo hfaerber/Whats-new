@@ -18,7 +18,7 @@ class SearchForm extends Component {
       <header>
         <h1>What's new</h1>
         <form>
-        <input className='formInput' type='search'
+        <input className='formInput' type='text'
           placeholder='Search for news articles here'
           value={this.state.searchQuery}
           onChange={event => this.handleChange(event)}

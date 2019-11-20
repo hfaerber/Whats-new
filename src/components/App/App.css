@@ -5,11 +5,12 @@
 }
 
 .app {
-  /* display: flex; */
-  /* display: grid;
+  display: grid;
   grid-template-areas:
     'header header '
-    'menu container'; */
+    'menu container';
+  grid-template-columns: 20% 80%;
+  grid-auto-rows: 20% 80%;
   background: #141527;
   height: 100vh;
   text-align: center;
