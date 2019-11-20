@@ -14,6 +14,7 @@ class App extends Component {
     super();
     this.state = {
       selectedNews: 'local',
+      filteredSelection: [],
       local,
       entertainment,
       health,
@@ -23,7 +24,10 @@ class App extends Component {
   }
 
   setSelectedNews = (newsType) => {
-    this.setState({ selectedNews: newsType });
+    this.setState({
+      selectedNews: newsType,
+      filteredSelection: [],
+    });
   }
 
   filterBySearch = (event, searchQuery) => {
@@ -31,7 +35,7 @@ class App extends Component {
     const searchedArticles =
       this.state[this.state.selectedNews].filter(article =>
         article.headline.includes(searchQuery))
-    this.setState({ [this.state.selectedNews]: searchedArticles })
+    this.setState({ filteredSelection: searchedArticles })
   }
 
   render () {
@@ -44,7 +48,10 @@ class App extends Component {
           setSelectedNews = {this.setSelectedNews}
         />
         <NewsContainer
-          newsType = {this.state[this.state.selectedNews]}
+          newsType =
+          {this.state.filteredSelection.length > 0 ?
+            this.state.filteredSelection
+          : this.state[this.state.selectedNews]}
         />
       </div>
     );
