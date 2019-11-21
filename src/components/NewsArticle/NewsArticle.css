@@ -5,7 +5,6 @@
 }
 
 .newsArticle {
-  border: 2px solid orange;
   color: black;
   width: 48%;
   margin: 0 2% 2% 0;
@@ -29,9 +28,7 @@ p {
 .linkBox {
   padding: 10px;
   background-color: rebeccapurple;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: block;
   width: 100%;
   border: 0;
   font-size: 1.2em;
@@ -40,5 +37,4 @@ p {
 a {
   color: whitesmoke;
   text-decoration: none;
-  margin: 5px;
 }

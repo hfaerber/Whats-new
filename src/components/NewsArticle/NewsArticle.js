@@ -7,9 +7,7 @@ function NewsArticle(props) {
       <img src={props.articleImg} alt="stock"/>
       <h3>{props.articleHeadline}</h3>
       <p>{props.articleDescription}</p>
-      <button className="linkBox">
-        <a href={props.articleUrl}> Link To article</a>
-      </button>
+      <a className="linkBox" href={props.articleUrl}> Link To article</a>
     </div>
 )}
 
