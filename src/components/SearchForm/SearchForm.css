@@ -1,10 +1,8 @@
 header {
   display: flex;
   flex-direction: row;
-  /* display: block; */
   justify-content: flex-start;
   align-items: center;
-  /* width: 100%; */
   color: whitesmoke;
   grid-area: header;
   padding: 0 19px;
