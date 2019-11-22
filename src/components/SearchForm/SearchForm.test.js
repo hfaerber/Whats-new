@@ -22,6 +22,20 @@ describe('SearchForm', () => {
     expect(wrapper.state('searchQuery')).toEqual(expected);
   })
 
+  it('should update state when resetSearchField is called', () => {
+    const wrapper = shallow(<SearchForm
+      filterBySearch={jest.fn()}
+    />);
+    const mockStartState = { searchQuery: 'test' };
+    const expected = { searchQuery: '' };
+
+    wrapper.setState(mockStartState);
+    expect(wrapper.state()).toEqual(mockStartState);
+    wrapper.instance().resetSearchField();
+    expect(wrapper.state()).toEqual(expected);
+
+  })
+
   it('should invoke handleChange when changes occur', () => {
     const mockEvent = { target: { value: 'pants' }}
     const wrapper = shallow(<SearchForm
@@ -33,18 +47,34 @@ describe('SearchForm', () => {
     expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockEvent);
   })
 
-  it('should call the filterBySearch prop with searchQuery state when clicked',
-    () => {
+  it('should invoke handleSearchButton when clicked', () => {
       const mockFilterBySearch = jest.fn();
       const mockEvent = {};
       const wrapper = shallow(<SearchForm
           filterBySearch={mockFilterBySearch}
         />);
       const mockSearchQuery = 'test';
+      wrapper.instance().handleSearchButton = jest.fn();
 
       wrapper.setState({searchQuery: mockSearchQuery});
-      wrapper.find('button').simulate('click', mockEvent)
-      expect(mockFilterBySearch).toHaveBeenCalledWith(mockEvent, mockSearchQuery)
+      wrapper.find('button').simulate('click', mockEvent);
+      expect(wrapper.instance().handleSearchButton).toHaveBeenCalledWith(mockEvent);
+  })
+
+  it('should invoke filterBySearch prop and resetSearchField when handleSearchButton is called',
+    () => {
+      const mockFilterBySearch = jest.fn();
+      const mockEvent = {};
+      const wrapper = shallow(<SearchForm
+        filterBySearch={mockFilterBySearch}
+      />)
+      const mockSearchQuery = 'test';
+      wrapper.instance().resetSearchField = jest.fn();
+
+      wrapper.setState({searchQuery: mockSearchQuery});
+      wrapper.instance().handleSearchButton(mockEvent);
+      expect(mockFilterBySearch).toHaveBeenCalledWith(mockEvent, mockSearchQuery);
+      expect(wrapper.instance().resetSearchField).toHaveBeenCalled();
   })
 
 })
