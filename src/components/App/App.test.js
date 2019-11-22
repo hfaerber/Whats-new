@@ -33,17 +33,17 @@ describe('App', () => {
     const mockSelectedNews = 'pants'
     const mockStartState = [
       { id: 1, headline: 'headline', img: 'testimg1',
-        description: 'testdesc1', url: 'http://google.com' },
+        description: 'desc1', url: 'http://google.com' },
       { id: 2, headline: 'test headline2', img: 'testimg2',
-        description: 'testdesc2', url: 'http://google.com' },
+        description: 'desc2', url: 'http://google.com' },
       { id: 3, headline: 'headline3', img: 'testimg3',
-        description: 'testdesc3', url: 'http://google.com' } ]
+        description: 'desc3', url: 'http://google.com' } ]
     const mockSearchedArticles = [
       { id: 2, headline: 'test headline2', img: 'testimg2',
-        description: 'testdesc2', url: 'http://google.com' } ]
+        description: 'desc2', url: 'http://google.com' } ]
     const expectedState = [
       { id: 2, headline: 'test headline2', img: 'testimg2',
-        description: 'testdesc2', url: 'http://google.com' }]
+        description: 'desc2', url: 'http://google.com' }]
 
     wrapper.setState({selectedNews: mockSelectedNews, pants: mockStartState});
     wrapper.instance().filterBySearch(mockEvent, mockSearchQuery);

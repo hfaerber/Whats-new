@@ -13,6 +13,17 @@ class SearchForm extends Component {
     this.setState({ searchQuery: event.target.value })
   }
 
+  handleSearchButton = event => {
+    this.props.filterBySearch(event, this.state.searchQuery);
+    this.resetSearchField();
+  }
+
+  resetSearchField = () => {
+    this.setState({
+      searchQuery: ''
+    })
+  }
+
   render() {
     return(
       <header>
@@ -24,7 +35,7 @@ class SearchForm extends Component {
           onChange={event => this.handleChange(event)}
           />
         <button className="formButton"
-          onClick={event => this.props.filterBySearch(event, this.state.searchQuery)}>Search Now</button>
+          onClick={event => this.handleSearchButton(event)}>Search Now</button>
         </form>
       </header>
     )

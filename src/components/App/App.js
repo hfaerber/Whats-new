@@ -34,7 +34,8 @@ class App extends Component {
     event.preventDefault();
     const searchedArticles =
       this.state[this.state.selectedNews].filter(article =>
-        article.headline.includes(searchQuery))
+        article.headline.toUpperCase().includes(searchQuery.toUpperCase()) ||
+        article.description.toUpperCase().includes(searchQuery.toUpperCase()));
     this.setState({ filteredSelection: searchedArticles })
   }
 
