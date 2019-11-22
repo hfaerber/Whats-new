@@ -12,12 +12,12 @@ describe('Menu', () => {
 
   it('should call the setSelectedNews prop with the button name when clicked',
     () => {
-      const setSelectedNewsMock = jest.fn();
+      const mockSetSelectedNews = jest.fn();
       const mockEvent = { target: { name: 'science'} };
       const wrapper = shallow(<Menu
-          setSelectedNews={setSelectedNewsMock}
+          setSelectedNews={mockSetSelectedNews}
         />);
       wrapper.find('nav').simulate('click', mockEvent);
-      expect(setSelectedNewsMock).toHaveBeenCalledWith('science')
+      expect(mockSetSelectedNews).toHaveBeenCalledWith('science')
   })
 })

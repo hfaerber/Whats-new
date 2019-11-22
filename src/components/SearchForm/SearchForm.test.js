@@ -12,22 +12,30 @@ describe('SearchForm', () => {
 
   it('should update state when handleChange is called', () => {
     const mockFilterBySearch = jest.fn();
+    const mockEvent = { target: { value: 'pants' } };
     const wrapper = shallow(<SearchForm
       filterBySearch={mockFilterBySearch}
       />);
-    const mockEvent = { target: { value: 'pants' } };
     const expected = 'pants';
 
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state('searchQuery')).toEqual(expected);
   })
 
-// Maybe??? not sure if needed based on today's lesson examples
   // it('should invoke handleChange when clicked')
 
-  it('should call the filterBySearch prop with searchQuery state when clicked', () => {
-    
-  }
-  )
+  it('should call the filterBySearch prop with searchQuery state when clicked',
+    () => {
+      const mockFilterBySearch = jest.fn();
+      const mockEvent = {};
+      const wrapper = shallow(<SearchForm
+          filterBySearch={mockFilterBySearch}
+        />);
+      const mockSearchQuery = 'test';
+
+      wrapper.setState({searchQuery: mockSearchQuery});
+      wrapper.find('button').simulate('click', mockEvent)
+      expect(mockFilterBySearch).toHaveBeenCalledWith(mockEvent, mockSearchQuery)
+  })
 
 })
