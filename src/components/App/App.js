@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import local from '../../data/local';
-import entertainment from '../../data/entertainment';
-import health from '../../data/health';
-import science from '../../data/science';
-import technology from '../../data/technology';
+// import local from '../../data/local';
+// import entertainment from '../../data/entertainment';
+// import health from '../../data/health';
+// import science from '../../data/science';
+// import technology from '../../data/technology';
 import './App.css';
 import NewsContainer from './../NewsContainer/NewsContainer.js'
 import Menu from './../Menu/Menu.js'
@@ -15,12 +15,26 @@ class App extends Component {
     this.state = {
       selectedNews: 'local',
       filteredSelection: [],
-      local,
-      entertainment,
-      health,
-      science,
-      technology,
+      local: [],
+      entertainment: [],
+      health: [],
+      science: [],
+      technology: [],
     }
+  }
+
+  componentDidMount() {
+    fetch('https://whats-new-api.herokuapp.com/api/v1/news')
+      .then(response => response.JSON())
+      .then(data => {
+        this.setState({
+          local: data.local,
+          entertainment: data.entertainment,
+          health: data.health,
+          science: data.science,
+          technology: data.technology,
+        })
+      })
   }
 
   setSelectedNews = (newsType) => {
