@@ -25,7 +25,7 @@ class App extends Component {
 
   componentDidMount() {
     fetch('https://whats-new-api.herokuapp.com/api/v1/news')
-      .then(response => response.JSON())
+      .then(response => response.json())
       .then(data => {
         this.setState({
           local: data.local,
