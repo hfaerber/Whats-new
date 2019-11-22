@@ -58,7 +58,8 @@ describe('SearchForm', () => {
 
       wrapper.setState({searchQuery: mockSearchQuery});
       wrapper.find('button').simulate('click', mockEvent);
-      expect(wrapper.instance().handleSearchButton).toHaveBeenCalledWith(mockEvent);
+      expect(wrapper.instance().handleSearchButton)
+        .toHaveBeenCalledWith(mockEvent);
   })
 
   it('should invoke filterBySearch prop and resetSearchField when handleSearchButton is called',
@@ -73,7 +74,8 @@ describe('SearchForm', () => {
 
       wrapper.setState({searchQuery: mockSearchQuery});
       wrapper.instance().handleSearchButton(mockEvent);
-      expect(mockFilterBySearch).toHaveBeenCalledWith(mockEvent, mockSearchQuery);
+      expect(mockFilterBySearch)
+        .toHaveBeenCalledWith(mockEvent, mockSearchQuery);
       expect(wrapper.instance().resetSearchField).toHaveBeenCalled();
   })
 
