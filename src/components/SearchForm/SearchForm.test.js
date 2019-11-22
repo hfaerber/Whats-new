@@ -22,7 +22,16 @@ describe('SearchForm', () => {
     expect(wrapper.state('searchQuery')).toEqual(expected);
   })
 
-  // it('should invoke handleChange when clicked')
+  it('should invoke handleChange when changes occur', () => {
+    const mockEvent = { target: { value: 'pants' }}
+    const wrapper = shallow(<SearchForm
+      filterBySearch={jest.fn()}
+    />);
+    wrapper.instance().handleChange = jest.fn();
+
+    wrapper.find('input').simulate('change', mockEvent)
+    expect(wrapper.instance().handleChange).toHaveBeenCalledWith(mockEvent);
+  })
 
   it('should call the filterBySearch prop with searchQuery state when clicked',
     () => {
