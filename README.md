@@ -32,7 +32,7 @@ This project focused on:
 ### Screenshots
 
 #### User view on page load
-![loadpage](https://user-images.githubusercontent.com/48163945/69470710-50c8a580-0d90-11ea-9652-8505c03a06e8.png)
+![pageload](https://user-images.githubusercontent.com/48163945/69471757-3d054b00-0d60-11ea-8af3-47267fc16312.png)
 
 #### User view on searches
-![searchpage](https://user-images.githubusercontent.com/48163945/69470726-68a02980-0d90-11ea-9368-a76402a9c4df.png)
+![searchresultsview](https://user-images.githubusercontent.com/48163945/69471782-88b7f480-0d60-11ea-9be1-af6ea71c1c96.png)
