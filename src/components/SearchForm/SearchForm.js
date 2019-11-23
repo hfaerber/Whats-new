@@ -30,11 +30,13 @@ class SearchForm extends Component {
       <header>
         <h1>What's new?</h1>
         <form>
+        <label className='inputLabel'>Search for news articles here
         <input className='formInput' type='text'
-          placeholder='Search for news articles here'
+          placeholder=' '
           value={this.state.searchQuery}
           onChange={event => this.handleChange(event)}
           />
+        </label>
         <button className="formButton"
           onClick={event => this.handleSearchButton(event)}>Search Now</button>
         </form>

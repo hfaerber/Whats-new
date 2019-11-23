@@ -3,16 +3,21 @@
 exports[`SearchForm should match the snapshot with all data passed in correctly 1`] = `
 <header>
   <h1>
-    What's new
+    What's new?
   </h1>
   <form>
-    <input
-      className="formInput"
-      onChange={[Function]}
-      placeholder="Search for news articles here"
-      type="text"
-      value=""
-    />
+    <label
+      className="inputLabel"
+    >
+      Search for news articles here
+      <input
+        className="formInput"
+        onChange={[Function]}
+        placeholder=" "
+        type="text"
+        value=""
+      />
+    </label>
     <button
       className="formButton"
       onClick={[Function]}
