@@ -1,5 +1,6 @@
 import React from 'react';
 import './Menu.css'
+import PropTypes from 'prop-types';
 
 const Menu = ({setSelectedNews}) => {
   return(
@@ -19,6 +20,10 @@ const Menu = ({setSelectedNews}) => {
       </nav>
     </div>
   )
+}
+
+Menu.propTypes = {
+  setSelectedNews: PropTypes.func,
 }
 
 export default Menu;

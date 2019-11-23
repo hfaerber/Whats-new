@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import NewsContainer from './../NewsContainer/NewsContainer.js'
-import Menu from './../Menu/Menu.js'
-import SearchForm from './../SearchForm/SearchForm.js'
+import NewsContainer from './../NewsContainer/NewsContainer.js';
+import Menu from './../Menu/Menu.js';
+import SearchForm from './../SearchForm/SearchForm.js';
 
 class App extends Component {
   constructor() {

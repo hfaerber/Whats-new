@@ -1,5 +1,6 @@
 import React from 'react';
 import './NewsArticle.css';
+import PropTypes from 'prop-types';
 
 function NewsArticle(props) {
   return (
@@ -10,5 +11,12 @@ function NewsArticle(props) {
       <a className="linkBox" href={props.articleUrl}> Link To article</a>
     </div>
 )}
+
+NewsArticle.propTypes = {
+  articleImg: PropTypes.string,
+  articleHeadline: PropTypes.string,
+  articleDescription: PropTypes.string,
+  articleUrl: PropTypes.string,
+}
 
 export default NewsArticle;
