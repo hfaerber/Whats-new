@@ -6,6 +6,7 @@ header {
   color: whitesmoke;
   grid-area: header;
   padding: 0 19px;
+  margin-left: 25px;
 }
 
 form {

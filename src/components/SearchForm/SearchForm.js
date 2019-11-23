@@ -28,7 +28,7 @@ class SearchForm extends Component {
   render() {
     return(
       <header>
-        <h1>What's new</h1>
+        <h1>What's new?</h1>
         <form>
         <input className='formInput' type='text'
           placeholder='Search for news articles here'
